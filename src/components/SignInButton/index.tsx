@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { MdClose } from 'react-icons/md'
 
 export default function SignInButton() {
-  const [isLogged, setIsLogged] = useState(true)
+  const [isLogged, setIsLogged] = useState(false)
 
   function handleLogClick() {
     setIsLogged(!isLogged)
