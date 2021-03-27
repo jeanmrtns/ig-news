@@ -1,7 +1,11 @@
 import React from 'react'
 import styles from './styles.module.scss'
 
-function index() {
+interface SubscribeButtonProps {
+  priceId: string
+}
+
+function index({ priceId }: SubscribeButtonProps) {
   return (
     <button type='button' className={styles.subscribeButton}>
       Subscribe now
