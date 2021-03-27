@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #61dcfb;
+  --green: #04d361;
+  --yellow: #eba417;
+  --title: #e1e1e6;
+  --text: #a8a8b3;
+  --shape: #1f2729;
+  --background: #121414;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--title);
+}
+
+body,
+input,
+button,
+textarea {
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
