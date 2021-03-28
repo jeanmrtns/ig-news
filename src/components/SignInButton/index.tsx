@@ -1,29 +1,27 @@
 import styles from './styles.module.scss'
 import { FaGithub } from 'react-icons/fa'
-import { useState } from 'react'
 import { MdClose } from 'react-icons/md'
+import { useSession, signIn, signOut } from 'next-auth/client'
 
 export default function SignInButton() {
-  const [isLogged, setIsLogged] = useState(false)
-
-  function handleLogClick() {
-    setIsLogged(!isLogged)
-  }
+  const [session] = useSession()
 
   return (
     <>
-      {!isLogged ? (
+      {!session ? (
         <button
           className={`${styles.signInButton} ${styles.buttonContainer}`}
-          onClick={handleLogClick}>
+          onClick={() => signIn('github')}>
           <FaGithub />
           <span>Sign In with GitHub</span>
         </button>
       ) : (
-        <button className={`${styles.signOutButton} ${styles.buttonContainer}`}>
+        <button
+          className={`${styles.signOutButton} ${styles.buttonContainer}`}
+          onClick={() => signOut()}>
           <FaGithub />
-          <span>jeanmrtns</span>
-          <MdClose className={styles.close} onClick={handleLogClick} />
+          <span>{session.user.name}</span>
+          <MdClose className={styles.close} />
         </button>
       )}
     </>

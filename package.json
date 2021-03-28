@@ -19,6 +19,8 @@
     "typescript": "^4.2.3"
   },
   "devDependencies": {
+    "@types/next-auth": "^3.7.4",
+    "next-auth": "^3.13.3",
     "sass": "^1.32.8"
   }
 }
